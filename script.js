@@ -528,11 +528,47 @@
   renderCalendar();
 
   /* ---------- Куда приходят заявки ---------- */
-  var CONTACT = {
+    var CONTACT = {
     telegram: 'popstaw',
+    whatsapp: '',
+    vk: '',
     email: 'savinov.ja@yandex.ru',
+    phone: '',
     site: 'https://55857485.github.io/autoservice/'
   };
+
+  /* ---------- Мессенджеры и липкая панель ---------- */
+  (function () {
+    var links = {
+      whatsapp: CONTACT.whatsapp ? 'https://wa.me/' + CONTACT.whatsapp.replace(/[^0-9]/g, '') : '',
+      telegram: CONTACT.telegram ? 'https://t.me/' + CONTACT.telegram : '',
+      vk: CONTACT.vk ? CONTACT.vk : ''
+    };
+
+    document.querySelectorAll('[data-messenger]').forEach(function (el) {
+      var url = links[el.getAttribute('data-messenger')];
+      if (url) {
+        el.href = url;
+        el.removeAttribute('hidden');
+      } else {
+        el.setAttribute('hidden', '');
+      }
+    });
+
+    document.querySelectorAll('[data-messenger-group]').forEach(function (group) {
+      var visible = group.querySelectorAll('[data-messenger]:not([hidden])').length;
+      if (visible === 0) group.setAttribute('hidden', '');
+    });
+
+    var bar = document.getElementById('cta-bar');
+    if (bar) {
+      var updateBar = function () {
+        bar.classList.toggle('is-visible', window.scrollY > 420);
+      };
+      window.addEventListener('scroll', updateBar, { passive: true });
+      updateBar();
+    }
+  })();
 
   function buildRequestText() {
     var nameEl = document.getElementById('f-name');
