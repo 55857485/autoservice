@@ -1385,6 +1385,55 @@ select.form__input option {
   width: 100%;
 }
 
+
+.modal__request {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  color: var(--color-graphite);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  text-align: left;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  max-height: 190px;
+  overflow-y: auto;
+}
+
+.modal__hint {
+  min-height: 18px;
+  margin: 0 0 10px;
+  font-size: 12.5px;
+  color: #16A34A;
+}
+
+.modal__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.modal__actions .btn {
+  flex: 1 1 120px;
+  padding: 11px 12px;
+  font-size: 14px;
+}
+.modal__window .btn--outline {
+  color: var(--color-graphite);
+  border-color: rgba(30, 41, 59, 0.22);
+  background: #F8FAFC;
+}
+
+.modal__window .btn--outline:hover {
+  border-color: var(--color-graphite);
+  background: #F1F5F9;
+  color: var(--color-graphite);
+}
+
 @keyframes fade-in {
   from { opacity: 0; }
   to   { opacity: 1; }
