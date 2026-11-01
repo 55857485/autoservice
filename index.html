@@ -590,9 +590,16 @@
       <div class="modal__icon" aria-hidden="true">
         <svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-      <h2 class="modal__title" id="modal-title">Заявка принята!</h2>
-      <p class="modal__text">Перезвоним в течение 15 минут</p>
-      <button class="btn btn--primary modal__ok" type="button" data-modal-close>Хорошо</button>
+              <h2 class="modal__title" id="modal-title">Заявка собрана</h2>
+        <p class="modal__text">Осталось отправить её нам — в один клик</p>
+        <pre class="modal__request" id="modal-request"></pre>
+        <p class="modal__hint" id="modal-hint"></p>
+        <div class="modal__actions">
+          <a class="btn btn--primary" id="send-telegram" href="https://t.me/popstaw" target="_blank" rel="noopener">Telegram</a>
+          <a class="btn btn--outline" id="send-email" href="mailto:savinov.ja@yandex.ru">Почта</a>
+          <button class="btn btn--outline" id="copy-request" type="button">Копировать</button>
+        </div>
+        <button class="btn btn--outline modal__ok" type="button" data-modal-close>Закрыть</button>
     </div>
   </div>
 
