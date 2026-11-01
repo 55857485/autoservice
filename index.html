@@ -118,7 +118,7 @@
                 <stop offset="1" stop-color="#02060E" stop-opacity="0"/>
               </radialGradient>
               <filter id="soft-smoke" x="-45%" y="-45%" width="190%" height="190%">
-                <feGaussianBlur stdDeviation="3.6"/>
+                <feGaussianBlur stdDeviation="5"/>
               </filter>
               <filter id="skid-blur" x="-60%" y="-60%" width="220%" height="220%">
                 <feGaussianBlur stdDeviation="1.8"/>
@@ -130,25 +130,12 @@
             <ellipse cx="232" cy="182" rx="86" ry="124" fill="url(#ground-shadow)"/>
 
             <!-- светлый дым от торможения -->
-            <g class="smoke" filter="url(#soft-smoke)">
-              <path class="smoke__trail smoke__trail--left"
-                    d="M170 238 C164 250 156 257 148 267 C142 275 142 283 146 291"
-                    fill="none" stroke="#CBD5E1" stroke-width="9" stroke-linecap="round" opacity="0.20"/>
-              <path class="smoke__trail smoke__trail--left"
-                    d="M170 238 C162 252 152 261 144 273 C138 283 140 292 147 300"
-                    fill="none" stroke="#94A3B8" stroke-width="18" stroke-linecap="round" opacity="0.12"/>
-              <path class="smoke__trail smoke__trail--right"
-                    d="M290 238 C296 250 304 257 312 267 C318 275 318 283 314 291"
-                    fill="none" stroke="#CBD5E1" stroke-width="9" stroke-linecap="round" opacity="0.20"/>
-              <path class="smoke__trail smoke__trail--right"
-                    d="M290 238 C298 252 308 261 316 273 C322 283 320 292 313 300"
-                    fill="none" stroke="#94A3B8" stroke-width="18" stroke-linecap="round" opacity="0.12"/>
-            </g>
+            
 
             <!-- тёмные следы резины -->
-            <g filter="url(#skid-blur)" opacity="0.5">
-              <path d="M176 246 C173 262 170 276 168 292" fill="none" stroke="#050B14" stroke-width="9" stroke-linecap="round"/>
-              <path d="M284 246 C287 262 290 276 292 292" fill="none" stroke="#050B14" stroke-width="9" stroke-linecap="round"/>
+            <g class="skid" filter="url(#skid-blur)">
+              <path class="skid__mark" d="M176 246 C173 262 170 276 168 292"/>
+              <path class="skid__mark" d="M284 246 C287 262 290 276 292 292"/>
             </g>
 
             <!-- колёса: задние ровно -->
@@ -266,6 +253,16 @@
             <!-- ручки дверей -->
             <rect x="186" y="176" width="4" height="12" rx="2" fill="#0F172A" opacity="0.45"/>
             <rect x="270" y="176" width="4" height="12" rx="2" fill="#0F172A" opacity="0.45"/>
+          <g class="smoke" filter="url(#soft-smoke)">
+              <circle class="smoke__puff" cx="172" cy="300" r="8"/>
+              <circle class="smoke__puff" cx="164" cy="312" r="11"/>
+              <circle class="smoke__puff" cx="156" cy="322" r="13"/>
+              <circle class="smoke__puff" cx="150" cy="330" r="14"/>
+              <circle class="smoke__puff smoke__puff--right" cx="288" cy="300" r="8"/>
+              <circle class="smoke__puff smoke__puff--right" cx="296" cy="312" r="11"/>
+              <circle class="smoke__puff smoke__puff--right" cx="304" cy="322" r="13"/>
+              <circle class="smoke__puff smoke__puff--right" cx="310" cy="330" r="14"/>
+            </g>
           </svg>
         </div>
       </div>
