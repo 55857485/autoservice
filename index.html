@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Автосервис с онлайн-записью: услуги, цены, отзывы, запись на ремонт и обслуживание автомобиля.">
   <title>Автосервис — ремонт и обслуживание | Онлайн-запись</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Автосервис">
+  <meta property="og:title" content="Автосервис — онлайн-запись на ремонт и обслуживание">
+  <meta property="og:description" content="Услуги, цены, отзывы и запись с календарём: клиент выбирает свободный день и время сам, заявка приходит сразу.">
+  <meta property="og:url" content="https://55857485.github.io/autoservice/">
+  <meta property="og:image" content="https://55857485.github.io/autoservice/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0F172A">
+  <link rel="canonical" href="https://55857485.github.io/autoservice/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon-192.png">
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
@@ -55,6 +69,11 @@
           <div class="hero__actions">
             <a href="#appointment" class="btn btn--primary">Записаться</a>
             <a href="tel:[ТЕЛЕФОН]" class="btn btn--outline">Позвонить</a>
+          </div>
+          <div class="hero__messengers" data-messenger-group>
+            <a class="hero__messenger" data-messenger="whatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="hero__messenger" data-messenger="telegram" href="#" target="_blank" rel="noopener">Telegram</a>
+            <a class="hero__messenger" data-messenger="vk" href="#" target="_blank" rel="noopener">ВКонтакте</a>
           </div>
         </div>
 
@@ -570,10 +589,10 @@
       </div>
       <div class="footer__col">
         <h2 class="footer__title">Мы в соцсетях</h2>
-        <ul class="footer__socials">
-          <li><a href="#" class="footer__social" aria-label="ВКонтакте">ВК</a></li>
-          <li><a href="#" class="footer__social" aria-label="Telegram">TG</a></li>
-          <li><a href="#" class="footer__social" aria-label="YouTube">YT</a></li>
+        <ul class="footer__socials" data-messenger-group>
+          <li><a class="footer__social" data-messenger="whatsapp" href="#" aria-label="WhatsApp" target="_blank" rel="noopener">WA</a></li>
+          <li><a class="footer__social" data-messenger="telegram" href="#" aria-label="Telegram" target="_blank" rel="noopener">TG</a></li>
+          <li><a class="footer__social" data-messenger="vk" href="#" aria-label="ВКонтакте" target="_blank" rel="noopener">VK</a></li>
         </ul>
       </div>
     </div>
@@ -583,7 +602,13 @@
   </footer>
 
   <!-- ======= МОДАЛКА УСПЕХА ======= -->
-  <div class="modal" id="success-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <!-- ======= ЛИПКАЯ ПАНЕЛЬ (мобильные) ======= -->
+  <div class="cta-bar" id="cta-bar">
+    <a class="cta-bar__btn cta-bar__btn--call" href="tel:[ТЕЛЕФОН]">Позвонить</a>
+    <a class="cta-bar__btn cta-bar__btn--book" href="#appointment">Записаться</a>
+  </div>
+
+<div class="modal" id="success-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
     <div class="modal__backdrop" data-modal-close></div>
     <div class="modal__window">
       <button class="modal__close" type="button" aria-label="Закрыть окно" data-modal-close>&times;</button>
