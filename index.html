@@ -1,0 +1,600 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Автосервис с онлайн-записью: услуги, цены, отзывы, запись на ремонт и обслуживание автомобиля.">
+  <title>Автосервис — ремонт и обслуживание | Онлайн-запись</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <!-- ======= 1. ХЕДЕР ======= -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#hero" class="logo" aria-label="Автосервис — на главную">
+        <span class="logo__mark" aria-hidden="true">А</span>
+        <span class="logo__text">Автосервис</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a href="#services" class="nav__link">Услуги</a></li>
+          <li><a href="#prices" class="nav__link">Цены</a></li>
+          <li><a href="#why" class="nav__link">О нас</a></li>
+          <li><a href="#reviews" class="nav__link">Отзывы</a></li>
+          <li><a href="#contacts" class="nav__link">Контакты</a></li>
+        </ul>
+        <a href="#appointment" class="btn btn--primary nav__cta">Записаться</a>
+      </nav>
+
+      <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+        <span class="burger__line" aria-hidden="true"></span>
+        <span class="burger__line" aria-hidden="true"></span>
+        <span class="burger__line" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======= 2. HERO ======= -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__badge">Ремонт и обслуживание любых марок</p>
+          <h1 class="hero__title">Качественный автосервис <span class="accent">рядом с вами</span></h1>
+          <p class="hero__subtitle">Диагностика, ремонт подвески, двигателя и электроники. Запишитесь онлайн — перезвоним за 15 минут.</p>
+          <ul class="hero__advantages">
+            <li class="hero__advantage">Гарантия на работы</li>
+            <li class="hero__advantage">Прозрачные цены</li>
+            <li class="hero__advantage">Своевременная сдача</li>
+          </ul>
+          <div class="hero__actions">
+            <a href="#appointment" class="btn btn--primary">Записаться</a>
+            <a href="tel:[ТЕЛЕФОН]" class="btn btn--outline">Позвонить</a>
+          </div>
+        </div>
+
+<div class="hero__visual" aria-hidden="true">
+          <svg class="car-top" viewBox="0 0 410 340" role="presentation" aria-label="Автомобиль, вид сверху, передние колёса повёрнуты вправо">
+            <defs>
+              <linearGradient id="paint" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#39485C"/>
+                <stop offset="0.18" stop-color="#8F9FB5"/>
+                <stop offset="0.5" stop-color="#B4C1D2"/>
+                <stop offset="0.82" stop-color="#8B9BB1"/>
+                <stop offset="1" stop-color="#31404F"/>
+              </linearGradient>
+              <linearGradient id="paint-hood" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#A9B8CA"/>
+                <stop offset="1" stop-color="#8B9BB1"/>
+              </linearGradient>
+              <linearGradient id="paint-roof" x1="0.1" y1="0" x2="0.9" y2="0">
+                <stop offset="0" stop-color="#7F8FA6"/>
+                <stop offset="0.45" stop-color="#A6B5C7"/>
+                <stop offset="0.55" stop-color="#9FAEC1"/>
+                <stop offset="1" stop-color="#76869D"/>
+              </linearGradient>
+              <linearGradient id="glass-pane" x1="0" y1="0" x2="1" y2="0.4">
+                <stop offset="0" stop-color="#1C2942"/>
+                <stop offset="0.45" stop-color="#101B2D"/>
+                <stop offset="1" stop-color="#1B2740"/>
+              </linearGradient>
+              <linearGradient id="tyre" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#04080F"/>
+                <stop offset="0.45" stop-color="#1A2331"/>
+                <stop offset="0.75" stop-color="#33404F"/>
+                <stop offset="1" stop-color="#111A26"/>
+              </linearGradient>
+              <radialGradient id="asphalt" cx="0.5" cy="0.5" r="0.5">
+                <stop offset="0" stop-color="#1E293B" stop-opacity="0.62"/>
+                <stop offset="0.7" stop-color="#1E293B" stop-opacity="0.22"/>
+                <stop offset="1" stop-color="#1E293B" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="ground-shadow" cx="0.5" cy="0.5" r="0.5">
+                <stop offset="0" stop-color="#02060E" stop-opacity="0.7"/>
+                <stop offset="1" stop-color="#02060E" stop-opacity="0"/>
+              </radialGradient>
+              <filter id="soft-smoke" x="-45%" y="-45%" width="190%" height="190%">
+                <feGaussianBlur stdDeviation="3.6"/>
+              </filter>
+              <filter id="skid-blur" x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur stdDeviation="1.8"/>
+              </filter>
+            </defs>
+
+            <!-- асфальт и тень под кузовом -->
+            <ellipse cx="230" cy="188" rx="152" ry="132" fill="url(#asphalt)"/>
+            <ellipse cx="232" cy="182" rx="86" ry="124" fill="url(#ground-shadow)"/>
+
+            <!-- светлый дым от торможения -->
+            <g class="smoke" filter="url(#soft-smoke)">
+              <path class="smoke__trail smoke__trail--left"
+                    d="M170 238 C164 250 156 257 148 267 C142 275 142 283 146 291"
+                    fill="none" stroke="#CBD5E1" stroke-width="9" stroke-linecap="round" opacity="0.20"/>
+              <path class="smoke__trail smoke__trail--left"
+                    d="M170 238 C162 252 152 261 144 273 C138 283 140 292 147 300"
+                    fill="none" stroke="#94A3B8" stroke-width="18" stroke-linecap="round" opacity="0.12"/>
+              <path class="smoke__trail smoke__trail--right"
+                    d="M290 238 C296 250 304 257 312 267 C318 275 318 283 314 291"
+                    fill="none" stroke="#CBD5E1" stroke-width="9" stroke-linecap="round" opacity="0.20"/>
+              <path class="smoke__trail smoke__trail--right"
+                    d="M290 238 C298 252 308 261 316 273 C322 283 320 292 313 300"
+                    fill="none" stroke="#94A3B8" stroke-width="18" stroke-linecap="round" opacity="0.12"/>
+            </g>
+
+            <!-- тёмные следы резины -->
+            <g filter="url(#skid-blur)" opacity="0.5">
+              <path d="M176 246 C173 262 170 276 168 292" fill="none" stroke="#050B14" stroke-width="9" stroke-linecap="round"/>
+              <path d="M284 246 C287 262 290 276 292 292" fill="none" stroke="#050B14" stroke-width="9" stroke-linecap="round"/>
+            </g>
+
+            <!-- колёса: задние ровно -->
+            <g class="car-top__wheel">
+              <rect x="167" y="209" width="20" height="46" rx="7" fill="url(#tyre)"/>
+              <rect x="170" y="214" width="4" height="36" rx="2" fill="#000000" opacity="0.45"/>
+            </g>
+            <g class="car-top__wheel">
+              <rect x="273" y="209" width="20" height="46" rx="7" fill="url(#tyre)"/>
+              <rect x="286" y="214" width="4" height="36" rx="2" fill="#000000" opacity="0.45"/>
+            </g>
+
+            <!-- колёса: передние повёрнуты вправо -->
+            <g class="car-top__wheel">
+              <rect class="car-top__tyre-steer" x="167" y="101" width="20" height="46" rx="7" fill="url(#tyre)"/>
+              <rect class="car-top__tyre-steer" x="170" y="106" width="4" height="36" rx="2" fill="#000000" opacity="0.45"/>
+            </g>
+            <g class="car-top__wheel">
+              <rect class="car-top__tyre-steer" x="273" y="101" width="20" height="46" rx="7" fill="url(#tyre)"/>
+              <rect class="car-top__tyre-steer" x="286" y="106" width="4" height="36" rx="2" fill="#000000" opacity="0.45"/>
+            </g>
+
+            <!-- КУЗОВ: сплошной силуэт седана сверху -->
+            <path d="M200 58 L260 58 C268 58 272 62 272 70
+                     C273 80 275 96 277 110 C279 118 280 121 280 126
+                     C280 134 278 142 277 152 C276 164 275 172 275 182
+                     C275 196 277 206 278 216 C280 224 280 228 280 234
+                     C279 244 276 258 274 266 C272 276 268 284 262 288
+                     C258 292 254 294 246 294 L214 294
+                     C206 294 202 292 198 288 C192 284 188 276 186 266
+                     C184 258 181 244 180 234 C180 228 180 224 182 216
+                     C183 206 185 196 185 182 C185 172 184 164 183 152
+                     C182 142 180 134 180 126 C180 121 181 118 183 110
+                     C185 96 187 80 188 70 C188 62 192 58 200 58 Z"
+                  fill="url(#paint)"/>
+
+            <!-- тонкий световой контур -->
+            <path d="M200 58 L260 58 C268 58 272 62 272 70
+                     C273 80 275 96 277 110 C279 118 280 121 280 126
+                     C280 134 278 142 277 152 C276 164 275 172 275 182
+                     C275 196 277 206 278 216 C280 224 280 228 280 234
+                     C279 244 276 258 274 266 C272 276 268 284 262 288
+                     C258 292 254 294 246 294 L214 294
+                     C206 294 202 292 198 288 C192 284 188 276 186 266
+                     C184 258 181 244 180 234 C180 228 180 224 182 216
+                     C183 206 185 196 185 182 C185 172 184 164 183 152
+                     C182 142 180 134 180 126 C180 121 181 118 183 110
+                     C185 96 187 80 188 70 C188 62 192 58 200 58 Z"
+                  fill="none" stroke="#CBD5E1" stroke-width="1.2" opacity="0.55"/>
+
+            <!-- капот -->
+            <path d="M192 70 C192 66 195 62 200 62 H260 C265 62 268 66 268 70
+                     C269 92 272 118 273 134 H187 C188 118 191 92 192 70 Z"
+                  fill="url(#paint-hood)" opacity="0.85"/>
+            <path d="M206 78 C207 100 208 118 208 132" fill="none" stroke="#4B5B72" stroke-width="1.6" opacity="0.35"/>
+            <path d="M254 78 C253 100 252 118 252 132" fill="none" stroke="#4B5B72" stroke-width="1.6" opacity="0.35"/>
+
+            <!-- передний бампер + решётка -->
+            <path d="M200 58 L260 58 C266 58 270 61 270 66 L270 71 H190 L190 66 C190 61 194 58 200 58 Z"
+                  fill="#22303F" opacity="0.9"/>
+            <rect x="214" y="60" width="32" height="9" rx="3.5" fill="#0A1120"/>
+            <rect x="218" y="62.4" width="24" height="1.6" rx="0.8" fill="#5B6B80"/>
+            <rect x="218" y="65.6" width="24" height="1.6" rx="0.8" fill="#5B6B80"/>
+
+            <!-- фары -->
+            <path d="M193 62 H218 C219 62 220 63 220 65 V69 C220 71 219 72 217 72 H194 C192 72 191 71 191 69 V65 C191 63 192 62 193 62 Z"
+                  fill="#FDE68A"/>
+            <path d="M242 62 H267 C268 62 269 63 269 65 V69 C269 71 268 72 266 72 H243 C241 72 240 71 240 69 V65 C240 63 241 62 242 62 Z"
+                  fill="#FDE68A"/>
+            <rect x="195" y="64.6" width="20" height="2.2" rx="1.1" fill="#FFFFFF" opacity="0.8"/>
+            <rect x="245" y="64.6" width="20" height="2.2" rx="1.1" fill="#FFFFFF" opacity="0.8"/>
+
+            <!-- зеркала -->
+            <path d="M184 146 C176 147 171 151 171 157 C171 163 176 167 184 168 Z" fill="#2A384B"/>
+            <path d="M276 146 C284 147 289 151 289 157 C289 163 284 167 276 168 Z" fill="#2A384B"/>
+
+            <!-- боковые стёкла (узкие полосы вдоль дверей) -->
+            <path d="M184 170 C183 182 183 196 184 208 L189 208 C188 196 188 182 189 170 Z" fill="url(#glass-pane)" opacity="0.55"/>
+            <path d="M276 170 C277 182 277 196 276 208 L271 208 C272 196 272 182 271 170 Z" fill="url(#glass-pane)" opacity="0.55"/>
+
+            <!-- лобовое стекло -->
+            <path d="M187 138 H273 C271 151 268 162 266 170 H194 C192 162 189 151 187 138 Z"
+                  fill="url(#glass-pane)"/>
+            <path d="M194 140 H266 C264 148 262 154 260 160 H200 C198 154 196 148 194 140 Z"
+                  fill="#93A3B8" opacity="0.16"/>
+
+            <!-- крыша -->
+            <path d="M194 170 H266 C267 184 267 198 266 212 H194 C193 198 193 184 194 170 Z"
+                  fill="url(#paint-roof)"/>
+            <path d="M196 172 H264 C264 176 264 179 264 182 H196 C196 179 196 176 196 172 Z"
+                  fill="#FFFFFF" opacity="0.22"/>
+
+            <!-- заднее стекло -->
+            <path d="M194 212 H266 C264 226 262 238 260 246 H200 C198 238 196 226 194 212 Z"
+                  fill="url(#glass-pane)"/>
+            <path d="M199 214 H261 C259 222 258 229 256 234 H204 C202 229 201 222 199 214 Z"
+                  fill="#93A3B8" opacity="0.14"/>
+
+            <!-- багажник -->
+            <path d="M200 246 H260 C261 258 263 272 266 282 H194 C197 272 199 258 200 246 Z"
+                  fill="url(#paint-hood)" opacity="0.55"/>
+
+            <!-- задние фонари -->
+            <path d="M196 282 H221 C222 282 223 283 223 285 V290 C223 292 222 293 220 293 H197 C195 293 194 292 194 290 V285 C194 283 195 282 196 282 Z"
+                  fill="#F97316"/>
+            <path d="M239 282 H264 C265 282 266 283 266 285 V290 C266 292 265 293 263 293 H240 C238 293 237 292 237 290 V285 C237 283 238 282 239 282 Z"
+                  fill="#F97316"/>
+            <rect x="198" y="285.4" width="20" height="2" rx="1" fill="#FFEDD5" opacity="0.75"/>
+            <rect x="242" y="285.4" width="20" height="2" rx="1" fill="#FFEDD5" opacity="0.75"/>
+
+            <!-- задний бампер -->
+            <path d="M200 288 H260 C265 288 268 290 268 293 C268 295 265 296 260 296 H200 C195 296 192 295 192 293 C192 290 195 288 200 288 Z"
+                  fill="#22303F" opacity="0.85"/>
+
+            <!-- ручки дверей -->
+            <rect x="186" y="176" width="4" height="12" rx="2" fill="#0F172A" opacity="0.45"/>
+            <rect x="270" y="176" width="4" height="12" rx="2" fill="#0F172A" opacity="0.45"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= 3. УСЛУГИ ======= -->
+    <section class="section services" id="services">
+      <div class="container">
+        <p class="section__kicker">Наши услуги</p>
+        <h2 class="section__title">Что мы делаем</h2>
+        <div class="services__grid">
+          <article class="card service">
+            <div class="service__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <h3 class="service__name">Диагностика</h3>
+            <p class="service__price">от 1 400 ₽</p>
+          </article>
+          <article class="card service">
+            <div class="service__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 6h12v12H6z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 6V4h6v2" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+            <h3 class="service__name">ТО и регламент</h3>
+            <p class="service__price">от 2 900 ₽</p>
+          </article>
+          <article class="card service">
+            <div class="service__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg></div>
+            <h3 class="service__name">Подвеска и рулевое</h3>
+            <p class="service__price">от 2 240 ₽</p>
+          </article>
+          <article class="card service">
+            <div class="service__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+            <h3 class="service__name">Двигатель</h3>
+            <p class="service__price">от 7 000 ₽</p>
+          </article>
+          <article class="card service">
+            <div class="service__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <h3 class="service__name">Электрика</h3>
+            <p class="service__price">от 2 100 ₽</p>
+          </article>
+          <article class="card service">
+            <div class="service__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7" cy="17" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="17" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 17h3M14 17h3" stroke="currentColor" stroke-width="2"/></svg></div>
+            <h3 class="service__name">Тормозная система</h3>
+            <p class="service__price">от 1 260 ₽</p>
+          </article>
+          <article class="card service">
+            <div class="service__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3 class="service__name">Кузовной ремонт</h3>
+            <p class="service__price">от 7 200 ₽</p>
+          </article>
+          <article class="card service">
+            <div class="service__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <h3 class="service__name">Шиномонтаж</h3>
+            <p class="service__price">от 3 100 ₽</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= 4. ПОЧЕМУ МЫ ======= -->
+    <section class="section why" id="why">
+      <div class="container">
+        <p class="section__kicker">О нас</p>
+        <h2 class="section__title">Почему выбирают нас</h2>
+        <div class="why__grid">
+          <article class="card why__card" data-num="01">
+            <h3 class="why__title">Опыт и квалификация</h3>
+            <p class="why__text">Мастера с опытом работы и доступом к актуальной технической документации.</p>
+          </article>
+          <article class="card why__card" data-num="02">
+            <h3 class="why__title">Оригинальные запчасти</h3>
+            <p class="why__text">Проверенные поставщики и гарантия на устанавливаемые детали.</p>
+          </article>
+          <article class="card why__card" data-num="03">
+            <h3 class="why__title">Честная цена</h3>
+            <p class="why__text">Итоговая стоимость согласовывается до начала работ, смета фиксируется.</p>
+          </article>
+          <article class="card why__card" data-num="04">
+            <h3 class="why__title">Точный срок сдачи</h3>
+            <p class="why__text">Называем реальные сроки и держим слово — отчёт о статусе по запросу.</p>
+          </article>
+        </div>
+        <div class="why__stats" id="stats">
+          <div class="stat">
+            <span class="stat__value" data-count="10" data-suffix="+">0</span>
+            <span class="stat__label">лет опыта</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value" data-count="5000" data-suffix="+">0</span>
+            <span class="stat__label">довольных клиентов</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value" data-count="15" data-suffix="">0</span>
+            <span class="stat__label">мастера в команде</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= 5. ПРАЙС ======= -->
+    <section class="section prices" id="prices">
+      <div class="container">
+        <p class="section__kicker">Прайс-лист</p>
+        <h2 class="section__title">Цены на популярные услуги</h2>
+        <div class="prices__table-wrap">
+          <table class="prices__table">
+            <caption class="visually-hidden">Стоимость популярных услуг автосервиса</caption>
+            <thead>
+              <tr>
+                <th scope="col">Услуга</th>
+                <th scope="col">Стоимость</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Компьютерная диагностика</td><td>от 1 400 ₽</td></tr>
+              <tr><td>Замена масла и фильтров</td><td>от 950 ₽</td></tr>
+              <tr><td>Замена тормозных колодок</td><td>от 1 260 ₽</td></tr>
+              <tr><td>Развал-схождение</td><td>от 2 600 ₽</td></tr>
+              <tr><td>Замена амортизаторов</td><td>от 2 240 ₽</td></tr>
+              <tr><td>Ремонт генератора</td><td>от 2 800 ₽</td></tr>
+              <tr><td>Замена сцепления</td><td>от 10 500 ₽</td></tr>
+              <tr><td>Полировка фар</td><td>от 1 500 ₽</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="prices__note">Цены ориентировочные и зависят от марки, модели и года выпуска — точную стоимость рассчитаем по VIN до начала работ.</p>
+      </div>
+    </section>
+
+    <!-- ======= 6. ФОРМА ЗАПИСИ ======= -->
+    <section class="section appointment" id="appointment">
+      <div class="container">
+        <p class="section__kicker">Онлайн-запись</p>
+        <h2 class="section__title">Запишитесь на удобное время</h2>
+        <form class="form" id="appointment-form" novalidate>
+          <div class="form__grid">
+            <div class="form__field">
+              <label class="form__label" for="f-name">Имя и фамилия</label>
+              <input class="form__input" type="text" id="f-name" name="name" autocomplete="name" placeholder="Иван Иванов" required>
+              <p class="form__error" id="err-name" role="alert"></p>
+            </div>
+
+            <div class="form__field">
+              <label class="form__label" for="f-phone">Телефон</label>
+              <input class="form__input" type="tel" id="f-phone" name="phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" inputmode="tel" required>
+              <p class="form__error" id="err-phone" role="alert"></p>
+            </div>
+
+            <div class="form__field">
+              <label class="form__label" for="f-car">Марка и модель авто</label>
+              <input class="form__input" type="text" id="f-car" name="car" placeholder="Например, Volkswagen Polo" autocomplete="off" list="car-list">
+              <datalist id="car-list"></datalist>
+              <p class="form__error form__error--hint" id="hint-car" role="status">Начните вводить — подскажем марку и модель</p>
+              <p class="form__error" id="err-car" role="alert"></p>
+            </div>
+
+            <div class="form__field">
+              <label class="form__label" for="f-service">Услуга</label>
+              <select class="form__input" id="f-service" name="service" required>
+                <option value="" selected disabled>Выберите услугу</option>
+                <option value="diagnostika">Диагностика</option>
+                <option value="to">ТО и регламент</option>
+                <option value="podveska">Подвеска и рулевое</option>
+                <option value="dvigatel">Двигатель</option>
+                <option value="electrika">Электрика</option>
+                <option value="tormoza">Тормозная система</option>
+                <option value="kuzov">Кузовной ремонт</option>
+                <option value="shinomontazh">Шиномонтаж</option>
+              </select>
+              <p class="form__error" id="err-service" role="alert"></p>
+            </div>
+
+            <div class="form__field">
+              <label class="form__label" for="f-date">Дата</label>
+              <div class="datepicker" id="datepicker">
+                <input type="text" class="form__input datepicker__input" id="f-date" name="date" placeholder="Выберите дату" readonly required aria-haspopup="dialog" aria-expanded="false" aria-label="Выбор даты записи">
+                <span class="datepicker__chevron" aria-hidden="true"></span>
+
+                <div class="datepicker__popup" id="datepicker-popup" role="dialog" aria-label="Календарь" hidden>
+                  <div class="datepicker__head">
+                    <button class="datepicker__nav" type="button" id="dp-prev" aria-label="Предыдущий месяц">&larr;</button>
+                    <span class="datepicker__title" id="dp-title">Месяц Год</span>
+                    <button class="datepicker__nav" type="button" id="dp-next" aria-label="Следующий месяц">&rarr;</button>
+                  </div>
+                  <div class="datepicker__weekdays" aria-hidden="true">
+                    <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
+                  </div>
+                  <div class="datepicker__grid" id="dp-grid" role="grid"></div>
+                  <p class="datepicker__hint" id="dp-hint">Серые дни — полностью заняты</p>
+                </div>
+              </div>
+              <p class="form__error" id="err-date" role="alert"></p>
+            </div>
+
+            <div class="form__field">
+              <label class="form__label" for="f-time">Время</label>
+              <select class="form__input" id="f-time" name="time" required>
+                <option value="" selected disabled>Выберите время</option>
+                <option value="morning">Утро (09:00–12:00)</option>
+                <option value="day">День (12:00–18:00)</option>
+                <option value="evening">Вечер (18:00–21:00)</option>
+              </select>
+              <p class="form__error" id="err-time" role="alert"></p>
+            </div>
+
+            <div class="form__field form__field--full">
+              <label class="form__label" for="f-comment">Комментарий</label>
+              <textarea class="form__input" id="f-comment" name="comment" rows="3" placeholder="Опишите проблему или пожелания"></textarea>
+              <p class="form__error" id="err-comment" role="alert"></p>
+            </div>
+
+            <div class="form__field form__field--full">
+              <label class="form__check">
+                <input type="checkbox" id="f-consent" name="consent" required>
+                <span class="form__check-box" aria-hidden="true"></span>
+                <span class="form__check-text">Я согласен(а) на обработку персональных данных</span>
+              </label>
+              <p class="form__error" id="err-consent" role="alert"></p>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn--primary form__submit">Отправить заявку</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ======= 7. ОТЗЫВЫ ======= -->
+    <section class="section reviews" id="reviews">
+      <div class="container">
+        <p class="section__kicker">Отзывы</p>
+        <h2 class="section__title">Что говорят клиенты</h2>
+        <div class="reviews__grid">
+          <article class="card review">
+            <div class="review__stars" aria-label="Оценка 5 из 5" role="img">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" fill="currentColor"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" fill="currentColor"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" fill="currentColor"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" fill="currentColor"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" fill="currentColor"/></svg>
+            </div>
+            <p class="review__text">Всё хорошо, сделали быстро и аккуратно. Спасибо!</p>
+<p class="review__author">— Иван</p>
+          </article>
+          <article class="card review">
+            <div class="review__stars" aria-label="Оценка 5 из 5" role="img">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" fill="currentColor"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" fill="currentColor"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" fill="currentColor"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" fill="currentColor"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" fill="currentColor"/></svg>
+            </div>
+            <p class="review__text">Хорошо, что всё объяснили и сделали в срок. Спасибо большое!</p>
+<p class="review__author">— Андрей</p>
+          </article>
+          <article class="card review">
+            <div class="review__stars" aria-label="Оценка 5 из 5" role="img">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" fill="currentColor"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" fill="currentColor"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" fill="currentColor"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" fill="currentColor"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z" fill="currentColor"/></svg>
+            </div>
+<p class="review__text">Остались довольны, всё сделали хорошо. Спасибо за работу!</p>
+            <p class="review__author">— Мария</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= 8. FAQ ======= -->
+    <section class="section faq" id="faq">
+      <div class="container">
+        <p class="section__kicker">Вопросы и ответы</p>
+        <h2 class="section__title">Частые вопросы</h2>
+        <div class="faq__list" id="faq-list">
+          <div class="faq__item">
+            <h3 class="faq__question">
+              <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">Как записаться на ремонт?</button>
+            </h3>
+            <div class="faq__answer" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden><p>Заполните форму онлайн-записи или позвоните по телефону [ТЕЛЕФОН] — администратор подберёт удобное время.</p></div>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__question">
+              <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">Работаете ли вы по гарантии?</button>
+            </h3>
+            <div class="faq__answer" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden><p>Да, на все виды работ выдаётся гарантия. Условия уточняйте у администратора.</p></div>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__question">
+              <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">Можно ли использовать свои запчасти?</button>
+            </h3>
+            <div class="faq__answer" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden><p>Да, можно. Обратите внимание: гарантия на работы сохраняется, на деталь — по условиям производителя.</p></div>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__question">
+              <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">Сколько длится диагностика?</button>
+            </h3>
+            <div class="faq__answer" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden><p>Компьютерная диагностика занимает 30–60 минут в зависимости от сложности.</p></div>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__question">
+              <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">Какие способы оплаты вы принимаете?</button>
+            </h3>
+            <div class="faq__answer" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden><p>Наличные, банковские карты и безналичный расчёт для юридических лиц.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======= 9. ФУТЕР ======= -->
+  <footer class="footer" id="contacts">
+    <div class="container footer__inner">
+      <div class="footer__col">
+        <h2 class="footer__title">Контакты</h2>
+        <p>Адрес: [АДРЕС]</p>
+        <p>Телефон: <a href="tel:[ТЕЛЕФОН]">[ТЕЛЕФОН]</a></p>
+        <p>Режим работы: Пн–Сб 09:00–21:00, Вс — выходной</p>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">Мы на карте</h2>
+        <div class="footer__map" role="img" aria-label="Карта: [АДРЕС]">
+          <span class="footer__map-placeholder">Карта: [АДРЕС]</span>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">Мы в соцсетях</h2>
+        <ul class="footer__socials">
+          <li><a href="#" class="footer__social" aria-label="ВКонтакте">ВК</a></li>
+          <li><a href="#" class="footer__social" aria-label="Telegram">TG</a></li>
+          <li><a href="#" class="footer__social" aria-label="YouTube">YT</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">© 2026 Автосервис. Все права защищены.</div>
+    </div>
+  </footer>
+
+  <!-- ======= МОДАЛКА УСПЕХА ======= -->
+  <div class="modal" id="success-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__window">
+      <button class="modal__close" type="button" aria-label="Закрыть окно" data-modal-close>&times;</button>
+      <div class="modal__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h2 class="modal__title" id="modal-title">Заявка принята!</h2>
+      <p class="modal__text">Перезвоним в течение 15 минут</p>
+      <button class="btn btn--primary modal__ok" type="button" data-modal-close>Хорошо</button>
+    </div>
+  </div>
+
+</body>
+</html>
