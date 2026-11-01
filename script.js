@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 /* ============================================================
    Автосервис — script.js
@@ -527,6 +527,31 @@
 
   renderCalendar();
 
+  /* ---------- Куда приходят заявки ---------- */
+  var CONTACT = {
+    telegram: 'popstaw',
+    email: 'savinov.ja@yandex.ru',
+    site: 'https://55857485.github.io/autoservice/'
+  };
+
+  function buildRequestText() {
+    var nameEl = document.getElementById('f-name');
+    var phoneEl = document.getElementById('f-phone');
+    var serviceEl = document.getElementById('f-service');
+    var timeEl = document.getElementById('f-time');
+    var serviceText = serviceEl && serviceEl.selectedIndex >= 0
+      ? serviceEl.options[serviceEl.selectedIndex].text : '—';
+    var timeText = timeEl && timeEl.selectedIndex >= 0
+      ? timeEl.options[timeEl.selectedIndex].text : '—';
+
+    return 'Заявка с сайта автосервиса\n\n' +
+      'Имя: ' + (nameEl ? nameEl.value.trim() : '') + '\n' +
+      'Телефон: ' + (phoneEl ? phoneEl.value.trim() : '') + '\n' +
+      'Услуга: ' + serviceText + '\n' +
+      'Дата: ' + (selectedDate || 'не выбрана') + '\n' +
+      'Время: ' + timeText;
+  }
+
   form.addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -540,18 +565,50 @@
       if (firstInvalid) firstInvalid.focus();
       return;
     }
-
+    var requestText = buildRequestText();
     form.reset();
     resetDatepicker();
-    showSuccessModal();
+    showSuccessModal(requestText);
   });
 
   /* ---------- Модалка успеха ---------- */
   var modal = document.getElementById('success-modal');
   var lastFocused = null;
 
-  function showSuccessModal() {
+    function showSuccessModal(requestText) {
     lastFocused = document.activeElement;
+
+    var text = requestText || '';
+    var pre = document.getElementById('modal-request');
+    var tgLink = document.getElementById('send-telegram');
+    var mailLink = document.getElementById('send-email');
+    var copyBtn = document.getElementById('copy-request');
+    var hint = document.getElementById('modal-hint');
+
+    if (pre) pre.textContent = text;
+    if (tgLink) tgLink.href = 'https://t.me/' + CONTACT.telegram;
+    if (mailLink) {
+      mailLink.href = 'mailto:' + CONTACT.email +
+        '?subject=' + encodeURIComponent('Заявка с сайта автосервиса') +
+        '&body=' + encodeURIComponent(text);
+    }
+
+    function copyText() {
+      if (!navigator.clipboard || !navigator.clipboard.writeText) {
+        if (hint) hint.textContent = 'Выделите текст и скопируйте вручную';
+        return;
+      }
+      navigator.clipboard.writeText(text).then(function () {
+        if (hint) hint.textContent = 'Текст скопирован — вставьте его в чат или письмо';
+      }).catch(function () {
+        if (hint) hint.textContent = 'Выделите текст и скопируйте вручную';
+      });
+    }
+
+    if (hint) hint.textContent = '';
+    if (copyBtn) copyBtn.onclick = copyText;
+    copyText();
+
     modal.hidden = false;
     document.body.classList.add('modal-open');
     var okBtn = modal.querySelector('.modal__ok');
