@@ -1744,6 +1744,85 @@ select.form__input option {
   }
 }
 
+/* ---------- Адрес и карта в футере ---------- */
+.footer__map {
+  display: grid;
+  place-items: center;
+  min-height: 180px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  background: #0F172A;
+  text-align: center;
+  padding: 18px;
+  overflow: hidden;
+}
+
+.footer__map.is-loaded {
+  padding: 0;
+  border-color: rgba(148, 163, 184, 0.18);
+}
+
+.footer__map iframe {
+  display: block;
+  width: 100%;
+  height: 240px;
+  border: 0;
+}
+
+.footer__map-address {
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.45;
+  margin-bottom: 6px;
+}
+
+.footer__map-note {
+  color: #94A3B8;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.footer__map-btn {
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(148, 163, 184, 0.45);
+  background: transparent;
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.footer__map-btn:hover {
+  border-color: var(--color-accent);
+  background: rgba(249, 115, 22, 0.12);
+}
+
+.footer__route {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.footer__route-link {
+  color: #FDBA74;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(253, 186, 116, 0.45);
+  align-self: flex-start;
+  padding-bottom: 1px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.footer__route-link:hover {
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
