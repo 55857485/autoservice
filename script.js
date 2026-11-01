@@ -588,6 +588,26 @@
       'Время: ' + timeText;
   }
 
+  /* ---------- Карта: загрузка по клику ---------- */
+  (function () {
+    var map = document.getElementById('footer-map');
+    var btn = document.getElementById('show-map');
+    if (!map || !btn) return;
+
+    btn.addEventListener('click', function () {
+      var src = map.getAttribute('data-map-src');
+      if (!src) return;
+      var frame = document.createElement('iframe');
+      frame.src = src;
+      frame.loading = 'lazy';
+      frame.title = map.getAttribute('aria-label') || 'Карта';
+      frame.setAttribute('allowfullscreen', '');
+      map.innerHTML = '';
+      map.appendChild(frame);
+      map.classList.add('is-loaded');
+    });
+  })();
+
   form.addEventListener('submit', function (event) {
     event.preventDefault();
 
