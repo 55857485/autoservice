@@ -94,6 +94,10 @@
   --header-h: 64px;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 /* ---------- База ---------- */
 * {
   margin: 0;
@@ -1655,6 +1659,91 @@ select.form__input option {
 }
 
 /* ---------- Respect prefers-reduced-motion ---------- */
+
+/* ---------- Мессенджеры в hero ---------- */
+.hero__messengers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.hero__messenger {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 15px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.34);
+  color: #CBD5E1;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.hero__messenger:hover {
+  border-color: var(--color-accent);
+  color: var(--color-white);
+  background: rgba(249, 115, 22, 0.12);
+}
+
+/* ---------- Липкая панель на мобильных ---------- */
+.cta-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  display: flex;
+  gap: 10px;
+  padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+  background: rgba(15, 23, 42, 0.96);
+  border-top: 1px solid rgba(148, 163, 184, 0.18);
+  transform: translateY(130%);
+  transition: transform 0.28s ease;
+}
+
+.cta-bar.is-visible {
+  transform: none;
+}
+
+.cta-bar__btn {
+  flex: 1 1 0;
+  text-align: center;
+  padding: 13px 10px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.cta-bar__btn--call {
+  color: var(--color-white);
+  border: 1.5px solid rgba(148, 163, 184, 0.45);
+}
+
+.cta-bar__btn--book {
+  color: var(--color-white);
+  background: var(--color-accent);
+}
+
+.cta-bar__btn:active {
+  opacity: 0.82;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 74px;
+  }
+}
+
+@media (min-width: 768px) {
+  .cta-bar {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
