@@ -78,7 +78,7 @@
         </div>
 
 <div class="hero__visual" aria-hidden="true">
-          <svg class="car-top" viewBox="0 0 410 340" role="presentation" aria-label="Автомобиль, вид сверху, передние колёса повёрнуты вправо">
+          <svg class="car-top" viewBox="0 0 410 340" role="presentation">
             <defs>
               <linearGradient id="paint" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0" stop-color="#39485C"/>
@@ -363,7 +363,7 @@
       <div class="container">
         <p class="section__kicker">Прайс-лист</p>
         <h2 class="section__title">Цены на популярные услуги</h2>
-        <div class="prices__table-wrap">
+        <div class="prices__table-wrap" role="region" aria-label="Таблица цен на услуги" tabindex="0">
           <table class="prices__table">
             <caption class="visually-hidden">Стоимость популярных услуг автосервиса</caption>
             <thead>
@@ -397,19 +397,19 @@
           <div class="form__grid">
             <div class="form__field">
               <label class="form__label" for="f-name">Имя и фамилия</label>
-              <input class="form__input" type="text" id="f-name" name="name" autocomplete="name" placeholder="Иван Иванов" required>
+              <input class="form__input" type="text" id="f-name" name="name" autocomplete="name" placeholder="Иван Иванов" aria-describedby="err-name" required>
               <p class="form__error" id="err-name" role="alert"></p>
             </div>
 
             <div class="form__field">
               <label class="form__label" for="f-phone">Телефон</label>
-              <input class="form__input" type="tel" id="f-phone" name="phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" inputmode="tel" required>
+              <input class="form__input" type="tel" id="f-phone" name="phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" inputmode="tel" aria-describedby="err-phone" required>
               <p class="form__error" id="err-phone" role="alert"></p>
             </div>
 
             <div class="form__field">
               <label class="form__label" for="f-car">Марка и модель авто</label>
-              <input class="form__input" type="text" id="f-car" name="car" placeholder="Например, Volkswagen Polo" autocomplete="off" list="car-list">
+              <input class="form__input" type="text" id="f-car" name="car" placeholder="Например, Volkswagen Polo" autocomplete="off" list="car-list" aria-describedby="hint-car err-car">
               <datalist id="car-list"></datalist>
               <p class="form__error form__error--hint" id="hint-car" role="status">Начните вводить — подскажем марку и модель</p>
               <p class="form__error" id="err-car" role="alert"></p>
@@ -417,7 +417,7 @@
 
             <div class="form__field">
               <label class="form__label" for="f-service">Услуга</label>
-              <select class="form__input" id="f-service" name="service" required>
+              <select class="form__input" id="f-service" name="service" aria-describedby="err-service" required>
                 <option value="" selected disabled>Выберите услугу</option>
                 <option value="diagnostika">Диагностика</option>
                 <option value="to">ТО и регламент</option>
@@ -434,7 +434,7 @@
             <div class="form__field">
               <label class="form__label" for="f-date">Дата</label>
               <div class="datepicker" id="datepicker">
-                <input type="text" class="form__input datepicker__input" id="f-date" name="date" placeholder="Выберите дату" readonly required aria-haspopup="dialog" aria-expanded="false" aria-label="Выбор даты записи">
+                <input type="text" class="form__input datepicker__input" id="f-date" name="date" placeholder="Выберите дату" readonly required aria-haspopup="dialog" aria-expanded="false" aria-label="Выбор даты записи" aria-describedby="err-date">
                 <span class="datepicker__chevron" aria-hidden="true"></span>
 
                 <div class="datepicker__popup" id="datepicker-popup" role="dialog" aria-label="Календарь" hidden>
@@ -446,7 +446,7 @@
                   <div class="datepicker__weekdays" aria-hidden="true">
                     <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
                   </div>
-                  <div class="datepicker__grid" id="dp-grid" role="grid"></div>
+                  <div class="datepicker__grid" id="dp-grid" role="group" aria-label="Дни месяца"></div>
                   <p class="datepicker__hint" id="dp-hint">Серые дни — полностью заняты</p>
                 </div>
               </div>
@@ -455,7 +455,7 @@
 
             <div class="form__field">
               <label class="form__label" for="f-time">Время</label>
-              <select class="form__input" id="f-time" name="time" required>
+              <select class="form__input" id="f-time" name="time" aria-describedby="err-time" required>
                 <option value="" selected disabled>Выберите время</option>
                 <option value="morning">Утро (09:00–12:00)</option>
                 <option value="day">День (12:00–18:00)</option>
@@ -466,13 +466,13 @@
 
             <div class="form__field form__field--full">
               <label class="form__label" for="f-comment">Комментарий</label>
-              <textarea class="form__input" id="f-comment" name="comment" rows="3" placeholder="Опишите проблему или пожелания"></textarea>
+              <textarea class="form__input" id="f-comment" name="comment" rows="3" placeholder="Опишите проблему или пожелания" aria-describedby="err-comment"></textarea>
               <p class="form__error" id="err-comment" role="alert"></p>
             </div>
 
             <div class="form__field form__field--full">
               <label class="form__check">
-                <input type="checkbox" id="f-consent" name="consent" required>
+                <input type="checkbox" id="f-consent" name="consent" aria-describedby="err-consent" required>
                 <span class="form__check-box" aria-hidden="true"></span>
                 <span class="form__check-text">Я согласен(а) на обработку персональных данных</span>
               </label>
@@ -480,7 +480,7 @@
             </div>
           </div>
 
-          <button type="submit" class="btn btn--primary form__submit">Отправить заявку</button>
+          <button type="submit" class="btn btn--primary form__submit">Оформить заявку</button>
         </form>
       </div>
     </section>
@@ -620,7 +620,7 @@
       <div class="modal__icon" aria-hidden="true">
         <svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-              <h2 class="modal__title" id="modal-title">Заявка собрана</h2>
+              <h2 class="modal__title" id="modal-title">Заявка оформлена</h2>
         <p class="modal__text">Осталось отправить её нам — в один клик</p>
         <pre class="modal__request" id="modal-request"></pre>
         <p class="modal__hint" id="modal-hint"></p>
