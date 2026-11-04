@@ -2035,3 +2035,33 @@ select.form__input option {
 .footer__policy:hover {
   color: var(--color-white);
 }
+
+/* ---------- Связь с разработчиком ---------- */
+.footer__seller {
+  padding-top: 4px;
+  padding-bottom: 24px;
+}
+
+.footer__seller-title {
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.footer__seller-text {
+  color: #CBD5E1;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer__seller-text a {
+  color: #FDBA74;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer__seller-text a:hover {
+  color: var(--color-white);
+}
