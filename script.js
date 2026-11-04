@@ -541,12 +541,14 @@
 
   renderCalendar();
 
-  /* ---------- Куда приходят заявки ---------- */
-    var CONTACT = {
-    telegram: 'popstaw',
+  /* ---------- Куда приходят заявки ----------
+     Демо-макет: контакты пустые, кнопки мессенджеров и почты
+     скрываются. В рабочей версии впишите сюда данные сервиса. */
+  var CONTACT = {
+    telegram: '',
     whatsapp: '',
     vk: '',
-    email: 'savinov.ja@yandex.ru',
+    email: '',
     phone: '',
     site: 'https://55857485.github.io/autoservice/'
   };
@@ -710,13 +712,31 @@
     var mailLink = document.getElementById('send-email');
     var copyBtn = document.getElementById('copy-request');
     var hint = document.getElementById('modal-hint');
+    var modalText = modal.querySelector('.modal__text');
+    var hasContacts = !!(CONTACT.telegram || CONTACT.email);
+
+    if (modalText && !hasContacts) {
+      modalText.textContent = 'Демонстрационный макет: в рабочей версии заявка уходит на почту или в мессенджер сервиса.';
+    }
 
     if (pre) pre.textContent = text;
-    if (tgLink) tgLink.href = 'https://t.me/' + CONTACT.telegram;
+    if (tgLink) {
+      if (CONTACT.telegram) {
+        tgLink.href = 'https://t.me/' + CONTACT.telegram;
+        tgLink.hidden = false;
+      } else {
+        tgLink.hidden = true;
+      }
+    }
     if (mailLink) {
-      mailLink.href = 'mailto:' + CONTACT.email +
-        '?subject=' + encodeURIComponent('Заявка с сайта автосервиса') +
-        '&body=' + encodeURIComponent(text);
+      if (CONTACT.email) {
+        mailLink.href = 'mailto:' + CONTACT.email +
+          '?subject=' + encodeURIComponent('Заявка с сайта автосервиса') +
+          '&body=' + encodeURIComponent(text);
+        mailLink.hidden = false;
+      } else {
+        mailLink.hidden = true;
+      }
     }
 
     function copyText() {
