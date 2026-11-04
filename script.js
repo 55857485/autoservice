@@ -622,6 +622,32 @@
     });
   })();
 
+  /* ---------- Уведомление о cookie ---------- */
+  (function () {
+    var bar = document.getElementById('cookie-bar');
+    var ok = document.getElementById('cookie-ok');
+    if (!bar || !ok) return;
+
+    var KEY = 'cookie-ok';
+
+    function accepted() {
+      try {
+        return window.localStorage.getItem(KEY) === '1';
+      } catch (e) {
+        return false;
+      }
+    }
+
+    if (!accepted()) bar.hidden = false;
+
+    ok.addEventListener('click', function () {
+      bar.hidden = true;
+      try {
+        window.localStorage.setItem(KEY, '1');
+      } catch (e) {}
+    });
+  })();
+
   /* ---------- Яндекс.Метрика ---------- */
   var METRIKA_ID = '114022503'; // номер счётчика, например '12345678'
 
