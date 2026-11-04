@@ -230,6 +230,7 @@
   function showError(field, message) {
     field.error.textContent = message;
     field.input.classList.toggle('form__input--invalid', message !== '');
+    field.input.setAttribute('aria-invalid', message !== '' ? 'true' : 'false');
     return message === '';
   }
 
@@ -505,6 +506,19 @@
     else closePopup();
   });
 
+  dateInput.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      if (popup.hidden) {
+        openPopup();
+        var firstDay = grid.querySelector('.datepicker__day:not(:disabled):not(.datepicker__day--empty)');
+        if (firstDay) firstDay.focus();
+      } else {
+        closePopup();
+      }
+    }
+  });
+
   btnPrev.addEventListener('click', function () {
     viewMonth--;
     if (viewMonth < 0) { viewMonth = 11; viewYear--; }
@@ -648,6 +662,12 @@
     var requestText = buildRequestText();
     form.reset();
     resetDatepicker();
+    Object.keys(fields).forEach(function (key) {
+      var field = fields[key];
+      field.error.textContent = '';
+      field.input.classList.remove('form__input--invalid');
+      field.input.setAttribute('aria-invalid', 'false');
+    });
     showSuccessModal(requestText);
   });
 
@@ -713,5 +733,23 @@
 
   modal.addEventListener('click', function (event) {
     if (event.target === modal.querySelector('.modal__window')) return;
+  });
+
+  modal.addEventListener('keydown', function (event) {
+    if (event.key !== 'Tab') return;
+    var focusable = Array.prototype.filter.call(
+      modal.querySelectorAll('a[href], button:not([disabled])'),
+      function (el) { return el.offsetParent !== null; }
+    );
+    if (!focusable.length) return;
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
   });
 })();
