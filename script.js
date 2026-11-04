@@ -598,7 +598,7 @@
       'Имя: ' + (nameEl ? nameEl.value.trim() : '') + '\n' +
       'Телефон: ' + (phoneEl ? phoneEl.value.trim() : '') + '\n' +
       'Услуга: ' + serviceText + '\n' +
-      'Дата: ' + (selectedDate || 'не выбрана') + '\n' +
+      'Дата: ' + (dateInput.value || 'не выбрана') + '\n' +
       'Время: ' + timeText;
   }
 
