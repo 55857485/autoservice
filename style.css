@@ -80,7 +80,9 @@
   --color-graphite: #1E293B;
   --color-graphite-2: #0F172A;
   --color-accent: #F97316;
-  --color-accent-hover: #EA580C;
+  --color-accent-strong: #EA580C;
+  --color-accent-text: #C2410C;
+  --color-accent-hover: #C2410C;
   --color-white: #FFFFFF;
   --color-bg: #F8FAFC;
   --color-border: #E2E8F0;
@@ -148,6 +150,20 @@ h1, h2, h3 {
   line-height: 1.2;
 }
 
+:focus-visible {
+  outline: 2px solid var(--color-accent-text);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.hero :focus-visible,
+.header :focus-visible,
+.appointment :focus-visible,
+.footer :focus-visible,
+.cta-bar :focus-visible {
+  outline-color: #FDBA74;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -188,7 +204,7 @@ h1, h2, h3 {
 }
 
 .btn--primary {
-  background: var(--color-accent);
+  background: var(--color-accent-strong);
   color: var(--color-white);
   box-shadow: 0 10px 24px -8px rgba(249, 115, 22, 0.65), 0 2px 6px rgba(249, 115, 22, 0.35);
 }
@@ -247,7 +263,7 @@ h1, h2, h3 {
   width: 38px;
   height: 38px;
   border-radius: 10px;
-  background: var(--color-accent);
+  background: var(--color-accent-strong);
   color: var(--color-white);
   font-weight: 800;
   font-size: 20px;
@@ -338,8 +354,8 @@ h1, h2, h3 {
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   padding: 10px;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -505,7 +521,7 @@ h1, h2, h3 {
 }
 
 .section__kicker {
-  color: var(--color-accent);
+  color: var(--color-accent-text);
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.02em;
@@ -604,7 +620,7 @@ h1, h2, h3 {
 }
 
 .service:hover .service__icon {
-  background: var(--color-accent);
+  background: var(--color-accent-strong);
   color: var(--color-white);
   transform: scale(1.08) rotate(-4deg);
 }
@@ -622,7 +638,7 @@ h1, h2, h3 {
 .service__price {
   font-weight: 800;
   font-size: 17px;
-  color: var(--color-accent);
+  color: var(--color-accent-text);
   margin-top: auto;
   letter-spacing: -0.01em;
 }
@@ -746,7 +762,7 @@ h1, h2, h3 {
 
 .prices__table td:last-child {
   font-weight: 800;
-  color: var(--color-accent);
+  color: var(--color-accent-text);
   white-space: nowrap;
 }
 
@@ -827,7 +843,7 @@ h1, h2, h3 {
   width: 100%;
   padding: 13px 14px;
   border-radius: var(--radius);
-  border: 1.5px solid #475569;
+  border: 1.5px solid #64748B;
   background: #0F172A;
   color: var(--color-white);
   font-size: 15px;
@@ -836,13 +852,13 @@ h1, h2, h3 {
 }
 
 .form__input::placeholder {
-  color: #64748B;
+  color: #94A3B8;
 }
 
 .form__input:focus {
-  outline: none;
+  outline: 2px solid #FDBA74;
+  outline-offset: 1px;
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.25);
 }
 
 textarea.form__input {
@@ -860,7 +876,8 @@ select.form__input option {
 }
 
 .form__input--invalid:focus {
-  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.25);
+  outline-color: #FCA5A5;
+  border-color: #F87171;
 }
 
 .form__error {
@@ -880,7 +897,8 @@ select.form__input option {
 
 .form__check {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  min-height: 44px;
   gap: 10px;
   cursor: pointer;
   font-size: 14px;
@@ -907,8 +925,8 @@ select.form__input option {
 }
 
 .form__check input:checked + .form__check-box {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
+  background: var(--color-accent-strong);
+  border-color: var(--color-accent-strong);
 }
 
 .form__check input:checked + .form__check-box::after {
@@ -921,7 +939,8 @@ select.form__input option {
 }
 
 .form__check input:focus-visible + .form__check-box {
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.35);
+  outline: 2px solid #FDBA74;
+  outline-offset: 2px;
 }
 
 .form__submit {
@@ -941,14 +960,13 @@ select.form__input option {
 }
 
 .datepicker__input::placeholder {
-  color: #64748B;
+  color: #94A3B8;
 }
 
 .datepicker__chevron {
   position: absolute;
   right: 16px;
   top: 50%;
-  transform: translateY(-50%);
   width: 11px;
   height: 11px;
   border-right: 2.5px solid #FDBA74;
@@ -962,14 +980,14 @@ select.form__input option {
   top: calc(100% + 8px);
   left: 0;
   z-index: 50;
-  width: 320px;
-  max-width: calc(100vw - 32px);
+  width: 344px;
+  max-width: calc(100vw - 24px);
   background: var(--color-white);
   color: var(--color-graphite);
   border: 1px solid var(--color-border);
   border-radius: 16px;
   box-shadow: 0 18px 44px -12px rgba(15, 23, 42, 0.35);
-  padding: 16px;
+  padding: 12px;
   animation: dp-in 0.22s ease;
 }
 
@@ -991,8 +1009,8 @@ select.form__input option {
 }
 
 .datepicker__nav {
-  width: 34px;
-  height: 34px;
+  width: 44px;
+  height: 44px;
   border-radius: 10px;
   border: 1px solid var(--color-border);
   background: var(--color-white);
@@ -1031,12 +1049,12 @@ select.form__input option {
 .datepicker__grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 4px;
+  gap: 2px;
 }
 
 .datepicker__day {
   position: relative;
-  height: 38px;
+  height: 44px;
   border-radius: 10px;
   border: none;
   background: transparent;
@@ -1056,19 +1074,19 @@ select.form__input option {
 
 .datepicker__day:disabled,
 .datepicker__day.is-full {
-  color: #B6C0CD;
+  color: #7F8C9E;
   background: #EEF1F5;
   cursor: not-allowed;
 }
 
 .datepicker__day.is-selected {
-  background: var(--color-accent);
+  background: var(--color-accent-strong);
   color: var(--color-white);
   box-shadow: 0 6px 14px -6px rgba(249, 115, 22, 0.6);
 }
 
 .datepicker__day.is-today {
-  outline: 2px solid rgba(249, 115, 22, 0.45);
+  outline: 2px solid var(--color-accent-text);
   outline-offset: -2px;
 }
 
@@ -1098,11 +1116,11 @@ select.form__input option {
 }
 
 .review:nth-child(2) {
-  transform: translateY(8px);
+  transform: none;
 }
 
 .review:nth-child(3) {
-  transform: translateY(16px);
+  transform: none;
 }
 
 @media (min-width: 768px) {
@@ -1115,7 +1133,7 @@ select.form__input option {
 .review__stars {
   display: flex;
   gap: 4px;
-  color: #F59E0B;
+  color: #B45309;
   margin-bottom: 12px;
 }
 
@@ -1197,8 +1215,8 @@ select.form__input option {
   flex-shrink: 0;
   width: 11px;
   height: 11px;
-  border-right: 2.5px solid var(--color-accent);
-  border-bottom: 2.5px solid var(--color-accent);
+  border-right: 2.5px solid var(--color-accent-text);
+  border-bottom: 2.5px solid var(--color-accent-text);
   transform: rotate(45deg) translateY(-3px);
   transition: transform 0.25s ease;
 }
@@ -1262,22 +1280,6 @@ select.form__input option {
   font-weight: 600;
 }
 
-.footer__map {
-  display: grid;
-  place-items: center;
-  min-height: 140px;
-  border-radius: var(--radius);
-  border: 1.5px dashed #475569;
-  background: #0F172A;
-  text-align: center;
-  padding: 16px;
-}
-
-.footer__map-placeholder {
-  color: #94A3B8;
-  font-size: 14px;
-}
-
 .footer__socials {
   display: flex;
   gap: 10px;
@@ -1286,8 +1288,8 @@ select.form__input option {
 .footer__social {
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 10px;
   background: #1E293B;
   border: 1px solid #334155;
@@ -1298,8 +1300,8 @@ select.form__input option {
 }
 
 .footer__social:hover {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
+  background: var(--color-accent-strong);
+  border-color: var(--color-accent-strong);
   color: var(--color-white);
 }
 
@@ -1307,7 +1309,7 @@ select.form__input option {
   border-top: 1px solid #1E293B;
   padding: 18px 0;
   font-size: 13.5px;
-  color: #64748B;
+  color: #94A3B8;
 }
 
 /* ---------- Модалка ---------- */
@@ -1347,10 +1349,10 @@ select.form__input option {
 
 .modal__close {
   position: absolute;
-  top: 12px;
-  right: 14px;
-  width: 34px;
-  height: 34px;
+  top: 8px;
+  right: 8px;
+  width: 44px;
+  height: 44px;
   border-radius: 10px;
   font-size: 22px;
   line-height: 1;
@@ -1369,7 +1371,7 @@ select.form__input option {
   margin: 0 auto 16px;
   border-radius: 50%;
   background: rgba(34, 197, 94, 0.14);
-  color: #16A34A;
+  color: #15803D;
   display: grid;
   place-items: center;
 }
@@ -1416,7 +1418,7 @@ select.form__input option {
   min-height: 18px;
   margin: 0 0 10px;
   font-size: 12.5px;
-  color: #16A34A;
+  color: #15803D;
 }
 
 .modal__actions {
@@ -1721,6 +1723,7 @@ select.form__input option {
 .hero__messenger {
   display: inline-flex;
   align-items: center;
+  min-height: 44px;
   padding: 8px 15px;
   border-radius: 999px;
   border: 1px solid rgba(148, 163, 184, 0.34);
@@ -1775,7 +1778,7 @@ select.form__input option {
 
 .cta-bar__btn--book {
   color: var(--color-white);
-  background: var(--color-accent);
+  background: var(--color-accent-strong);
 }
 
 .cta-bar__btn:active {
@@ -1834,7 +1837,8 @@ select.form__input option {
 }
 
 .footer__map-btn {
-  padding: 9px 16px;
+  min-height: 44px;
+  padding: 11px 18px;
   border-radius: 999px;
   border: 1.5px solid rgba(148, 163, 184, 0.45);
   background: transparent;
