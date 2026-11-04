@@ -476,6 +476,7 @@
                 <span class="form__check-box" aria-hidden="true"></span>
                 <span class="form__check-text">Я согласен(а) на обработку персональных данных</span>
               </label>
+              <p class="form__policy">Подробнее — в <a href="privacy.html">Политике обработки персональных данных</a></p>
               <p class="form__error" id="err-consent" role="alert"></p>
             </div>
           </div>
@@ -602,12 +603,20 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <div class="container">© 2026 Автосервис. Все права защищены.</div>
+      <div class="container">
+        © 2026 Автосервис. Все права защищены.
+        <p class="footer__demo">Демонстрационный макет: наименование, адрес, телефоны, цены и отзывы вымышлены. <a class="footer__policy" href="privacy.html">Политика обработки персональных данных</a></p>
+      </div>
     </div>
   </footer>
 
   <!-- ======= МОДАЛКА УСПЕХА ======= -->
-    <!-- ======= ЛИПКАЯ ПАНЕЛЬ (мобильные) ======= -->
+  <div class="cookie" id="cookie-bar" hidden>
+    <p class="cookie__text">Сайт использует cookie и Яндекс.Метрику для обезличенной статистики. Подробнее — в <a href="privacy.html">политике обработки персональных данных</a>.</p>
+    <button class="cookie__btn" type="button" id="cookie-ok">Понятно</button>
+  </div>
+
+  <!-- ======= ЛИПКАЯ ПАНЕЛЬ (мобильные) ======= -->
   <div class="cta-bar" id="cta-bar">
     <a class="cta-bar__btn cta-bar__btn--call" href="tel:[ТЕЛЕФОН]">Позвонить</a>
     <a class="cta-bar__btn cta-bar__btn--book" href="#appointment">Записаться</a>
