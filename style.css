@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    Автосервис — style.css
    Mobile-first. Breakpoints: 480 / 768 / 1200px
    ============================================================ */
@@ -80,9 +80,9 @@
   --color-graphite: #1E293B;
   --color-graphite-2: #0F172A;
   --color-accent: #F97316;
-  --color-accent-strong: #EA580C;
+  --color-accent-strong: #C2410C;
   --color-accent-text: #C2410C;
-  --color-accent-hover: #C2410C;
+  --color-accent-hover: #9A3412;
   --color-white: #FFFFFF;
   --color-bg: #F8FAFC;
   --color-border: #E2E8F0;
@@ -192,7 +192,7 @@ h1, h2, h3 {
   padding: 13px 24px;
   border-radius: var(--radius);
   font-weight: 700;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.2;
   text-align: center;
   letter-spacing: 0.01em;
@@ -271,7 +271,7 @@ h1, h2, h3 {
 
 .logo__text {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 20px;
   letter-spacing: -0.01em;
 }
 
@@ -304,7 +304,7 @@ h1, h2, h3 {
   padding: 12px 8px;
   color: #CBD5E1;
   font-weight: 600;
-  font-size: 17px;
+  font-size: 16px;
   border-radius: 8px;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
@@ -461,7 +461,7 @@ h1, h2, h3 {
   background: rgba(249, 115, 22, 0.16);
   border: 1px solid rgba(249, 115, 22, 0.45);
   color: #FDBA74;
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -470,6 +470,7 @@ h1, h2, h3 {
   font-weight: 800;
   letter-spacing: -0.02em;
   max-width: 640px;
+  text-wrap: balance;
 }
 
 .hero__subtitle {
@@ -631,13 +632,13 @@ h1, h2, h3 {
 }
 
 .service__name {
-  font-size: 16.5px;
+  font-size: 16px;
   font-weight: 700;
 }
 
 .service__price {
   font-weight: 800;
-  font-size: 17px;
+  font-size: 16px;
   color: var(--color-accent-text);
   margin-top: auto;
   letter-spacing: -0.01em;
@@ -673,7 +674,7 @@ h1, h2, h3 {
 }
 
 .why__title {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 8px;
   position: relative;
@@ -682,7 +683,7 @@ h1, h2, h3 {
 
 .why__text {
   color: var(--color-muted);
-  font-size: 15px;
+  font-size: 16px;
   position: relative;
   z-index: 1;
 }
@@ -741,7 +742,7 @@ h1, h2, h3 {
   width: 100%;
   min-width: 460px;
   border-collapse: collapse;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .prices__table th {
@@ -846,7 +847,7 @@ h1, h2, h3 {
   border: 1.5px solid #64748B;
   background: #0F172A;
   color: var(--color-white);
-  font-size: 15px;
+  font-size: 16px;
   font-family: inherit;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -881,7 +882,7 @@ select.form__input option {
 }
 
 .form__error {
-  font-size: 13px;
+  font-size: 14px;
   color: #FCA5A5;
   min-height: 18px;
 }
@@ -892,7 +893,7 @@ select.form__input option {
 
 .form__error--hint {
   color: #94A3B8;
-  font-size: 12.5px;
+  font-size: 12px;
 }
 
 .form__check {
@@ -1028,7 +1029,7 @@ select.form__input option {
 
 .datepicker__title {
   font-weight: 700;
-  font-size: 15.5px;
+  font-size: 16px;
 }
 
 .datepicker__weekdays {
@@ -1096,7 +1097,7 @@ select.form__input option {
 
 .datepicker__hint {
   margin-top: 10px;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--color-muted);
   text-align: center;
 }
@@ -1146,7 +1147,7 @@ select.form__input option {
 .review__text {
   color: var(--color-graphite);
   margin-bottom: 14px;
-  font-size: 15.5px;
+  font-size: 16px;
   position: relative;
 }
 
@@ -1164,7 +1165,7 @@ select.form__input option {
 .review__author {
   color: var(--color-muted);
   font-weight: 700;
-  font-size: 14.5px;
+  font-size: 14px;
   margin-top: auto;
 }
 
@@ -1226,7 +1227,7 @@ select.form__input option {
 }
 
 .faq__answer {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--color-muted);
   padding: 0 18px;
 }
@@ -1253,7 +1254,7 @@ select.form__input option {
 .footer {
   background: var(--color-graphite-2);
   color: #CBD5E1;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .footer__inner {
@@ -1266,7 +1267,7 @@ select.form__input option {
 
 .footer__title {
   color: var(--color-white);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 14px;
 }
@@ -1293,7 +1294,7 @@ select.form__input option {
   border-radius: 10px;
   background: #1E293B;
   border: 1px solid #334155;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   color: #E2E8F0;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
@@ -1308,7 +1309,7 @@ select.form__input option {
 .footer__bottom {
   border-top: 1px solid #1E293B;
   padding: 18px 0;
-  font-size: 13.5px;
+  font-size: 12px;
   color: #94A3B8;
 }
 
@@ -1354,7 +1355,7 @@ select.form__input option {
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1;
   color: var(--color-muted);
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -1382,7 +1383,7 @@ select.form__input option {
 }
 
 .modal__title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 800;
   margin-bottom: 8px;
 }
@@ -1405,7 +1406,7 @@ select.form__input option {
   border: 1px solid #E2E8F0;
   color: var(--color-graphite);
   font-family: 'Inter', system-ui, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.55;
   text-align: left;
   white-space: pre-wrap;
@@ -1417,7 +1418,7 @@ select.form__input option {
 .modal__hint {
   min-height: 18px;
   margin: 0 0 10px;
-  font-size: 12.5px;
+  font-size: 12px;
   color: #15803D;
 }
 
@@ -1698,7 +1699,7 @@ select.form__input option {
 
   .nav__link {
     padding: 10px 14px;
-    font-size: 15.5px;
+    font-size: 16px;
   }
 
   .nav__cta {
@@ -1765,7 +1766,7 @@ select.form__input option {
   text-align: center;
   padding: 13px 10px;
   border-radius: 12px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
   text-decoration: none;
   transition: opacity 0.2s ease;
@@ -1825,14 +1826,14 @@ select.form__input option {
 .footer__map-address {
   color: var(--color-white);
   font-weight: 700;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.45;
   margin-bottom: 6px;
 }
 
 .footer__map-note {
   color: #94A3B8;
-  font-size: 13px;
+  font-size: 12px;
   margin-bottom: 14px;
 }
 
